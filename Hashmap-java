@@ -1,0 +1,29 @@
+import java.util.HashMap;
+public class mapping {
+	public static void main(String[] args)
+	{
+		
+		HashMap<String,Integer> empIds=new HashMap<>();
+		empIds.put("kriti",71);
+		empIds.put("moahn",91);
+		empIds.put("preetham", 114);
+		
+		System.out.println(empIds);
+		
+		System.out.println(empIds.get("kriti"));
+		
+		System.out.println(empIds.containsKey("Mourya"));
+		
+		empIds.replace("moahn", 420);
+		System.out.println(empIds);
+		
+		System.out.println(empIds.containsValue(01));
+		
+		empIds.putIfAbsent("mourya",93);
+		System.out.println(empIds);
+		
+		
+		
+	}
+
+}
