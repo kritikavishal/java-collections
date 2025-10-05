@@ -1,0 +1,64 @@
+
+public class LL {
+
+    // Node class - represents each element in the list
+    class Node {
+        String data;
+        Node next;
+
+        Node(String data) {
+            this.data = data;
+            this.next = null; // next node will be null initially
+        }
+    }
+
+    // head of the list
+    Node head;
+
+    // Function to add a node at the beginning
+    public void addFirst(String data) {
+        Node newN = new Node(data);
+        if (head == null) {
+            head = newN;
+            return;
+        }
+        newN.next = head;
+        head = newN;
+    }
+
+    // Function to add a node at the end
+    public void addLast(String data) {
+        Node newN = new Node(data);
+        if (head == null) {
+            head = newN;
+            return;
+        }
+
+        Node currNode = head;
+        while (currNode.next != null) {
+            currNode = currNode.next;
+        }
+        currNode.next = newN;
+    }
+
+    // Function to print the list
+    public void printList() {
+        Node currNode = head;
+        while (currNode != null) {
+            System.out.print(currNode.data+" -> ");
+            currNode = currNode.next;
+        }
+        System.out.println("NULL");
+    }
+
+    // Main method
+    public static void main(String[] args) {
+        LL list = new LL();
+        list.addFirst("Kriti ");
+        list.addFirst("is ");
+        list.addLast("a ");
+        list.addLast("millionaire ");
+
+        list.printList();
+    }
+}
