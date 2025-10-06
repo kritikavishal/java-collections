@@ -1,0 +1,30 @@
+import java.util.*;
+class LL
+{
+  public static void main(String args[])
+  {
+      LinkedList<String> list=new LinkedList<String>();
+
+      list.addFirst("kriti");
+      list.addFirst("is):
+      System.out.println(list);
+
+      list.addLast("millionaire");
+      System.out.println(list);
+
+      System.out.println(list.getSize());
+
+      for(int i=0;i<list.getSize();i++)
+      {
+          System.out.println(list.get(i)+"->");
+      }
+      System.out.println("null");
+
+      list.removeFirst();
+      System.out.println(list);
+
+      list.removeLast();
+      System.out.println(list);
+
+  }
+}
