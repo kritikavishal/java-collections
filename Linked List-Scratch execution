@@ -1,5 +1,10 @@
 
 public class LL {
+	private int size;
+	
+	LL(){
+		this.size=0;
+	}
 
     // Node class - represents each element in the list
     class Node {
@@ -9,6 +14,7 @@ public class LL {
         Node(String data) {
             this.data = data;
             this.next = null; // next node will be null initially
+            size++;//size increases when a node is created
         }
     }
 
@@ -40,6 +46,43 @@ public class LL {
         }
         currNode.next = newN;
     }
+    
+    //function to delete first
+    public void deleteFirst(){
+    	if(head==null)
+    	{
+    		System.out.println("List is empty");
+    		return;
+    	}
+    	size--;
+    	head=head.next;
+    	//we made head next node as the new node
+    	//doing this the head node gets deleeted
+    	
+    }
+    //function to delete last
+    public void deleteLast() {
+    	if(head==null)
+    	{
+    		System.out.println("List is empty");
+    		return;
+    	}
+    	size--;
+    	if(head.next==null)
+    	{
+    		head=null;
+    		return;
+    	}
+    	Node secondLast=head;
+    	Node lastNode=head.next;//when head.next=null then lastnode=null
+    	while(lastNode.next!=null)//null->null will throw error
+    	{
+    		lastNode.next=lastNode;
+    		secondLast.next=secondLast;
+    	}
+    	secondLast.next=null;
+    	
+    }
 
     // Function to print the list
     public void printList() {
@@ -50,15 +93,28 @@ public class LL {
         }
         System.out.println("NULL");
     }
+    public int getSize() {
+    	return size;
+    }
 
     // Main method
     public static void main(String[] args) {
         LL list = new LL();
         list.addFirst("Kriti ");
         list.addFirst("is ");
+        list.printList();
+        
         list.addLast("a ");
         list.addLast("millionaire ");
-
         list.printList();
+        
+        list.deleteFirst();
+        list.printList();
+        
+        list.deleteLast();
+        list.printList();
+        
+       System.out.println( list.getSize());
+       
     }
 }
