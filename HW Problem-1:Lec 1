@@ -1,0 +1,25 @@
+import java.util.*;
+public class hw1 {
+	public static void main(String args[])
+	{
+		LinkedList<Integer> ki=new LinkedList<Integer>();
+		ki.addFirst(3);
+		ki.addFirst(7);
+		ki.addFirst(5);
+		ki.addFirst(1);
+		ki.addLast(8);
+		ki.addLast(2);
+		ki.addLast(3);
+		System.out.println(ki);
+		
+		for(int i=0;i<ki.size();i++)
+		{
+			if(ki.get(i)==7)
+			{
+				System.out.println("The index of int 7 is at:" +i);
+			}
+		}
+		
+	}
+
+}
