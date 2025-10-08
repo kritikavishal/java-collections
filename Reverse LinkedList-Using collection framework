@@ -1,0 +1,18 @@
+import java.util.*;
+public class revL {
+	public static void main(String args[])
+	{
+		LinkedList<Integer> fo=new LinkedList<>();
+		fo.add(1);
+		fo.add(2);
+		fo.add(3);
+		fo.add(4);
+		fo.add(5);
+		System.out.println("The org linkedlist:"+fo);
+		
+		Collections.reverse(fo);
+		//tis built in funcction is only valid for collectio framework
+		System.out.println("The reverse linkedlist:"+fo);
+	}
+
+}
